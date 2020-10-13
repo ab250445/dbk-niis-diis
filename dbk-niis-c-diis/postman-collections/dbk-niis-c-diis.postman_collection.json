@@ -1,0 +1,407 @@
+{
+	"info": {
+		"_postman_id": "6fcb8a3b-e336-458f-8b85-568b37ec2c3a",
+		"name": "dbk-niis-c-diis",
+		"description": "NIIS DIIS Connector",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "actuator",
+			"item": [
+				{
+					"name": "metrics - transaction request count",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{url}}:{{port}}/actuator/metrics/niis.v1.transactions",
+							"protocol": "http",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"actuator",
+								"metrics",
+								"niis.v1.transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actuator",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{url}}:{{port}}/actuator/",
+							"protocol": "http",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"actuator",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "metrics  transactions timer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{url}}:{{port}}/actuator/metrics/niis.v1.transactions.time",
+							"protocol": "http",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"actuator",
+								"metrics",
+								"niis.v1.transactions.time"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "health check",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{url}}:{{port}}/actuator/health",
+							"protocol": "http",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"actuator",
+								"health"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actuator metrics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{url}}:{{port}}/actuator/metrics",
+							"protocol": "http",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"actuator",
+								"metrics"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actuator info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{url}:{{port}}/actuator/info",
+							"protocol": "http",
+							"host": [
+								"{{url}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"actuator",
+								"info"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actuator/health/liveness",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/actuator/health/liveness",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"actuator",
+								"health",
+								"liveness"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actuator/health/liveness",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{url}}:{{port}}/actuator/health/liveness",
+							"protocol": "http",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"actuator",
+								"health",
+								"liveness"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actuator/health/readiness",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{url}}:{{port}}/actuator/health/readiness",
+							"protocol": "http",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"actuator",
+								"health",
+								"readiness"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Actuator requests - health,info,metrics",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "customers",
+			"item": [
+				{
+					"name": "http://localhost:8080/niis/v1/customer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "broker-host",
+								"value": "andev10rtige102.dca.diginsite.net",
+								"type": "text"
+							},
+							{
+								"key": "broker-port",
+								"value": "12589",
+								"type": "text"
+							},
+							{
+								"key": "client",
+								"value": "socket",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"hostIds\": [{\n\t\t\"hostId\": \"891089108\",\n\t\t\"hostIdType\": \"TAX_ID\",\n        \"pin\": \"\"\n\t}],\n\t\"institutionId\": \"DI1234\"\n    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/niis/v1/customer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"niis",
+								"v1",
+								"customer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post customer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "broker-host",
+								"value": "andev10rtige102.dca.diginsite.net",
+								"type": "text"
+							},
+							{
+								"key": "broker-port",
+								"value": "12589",
+								"type": "text"
+							},
+							{
+								"key": "client",
+								"value": "socket",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"hostIds\": [{\n\t\t\"hostId\": \"891089108\",\n\t\t\"hostIdType\": \"MEMBER_ID\",\n        \"pin\": \"\",\n        \"pinType\": \"UNKNOWN\"\n\t}],\n\t\"institutionId\": \"DI1234\"\n    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/niis/v1/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"niis",
+								"v1",
+								"customers"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "transactions",
+			"item": [
+				{
+					"name": "get transactions",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "broker-host",
+								"type": "text",
+								"value": "andev10rtige102.dca.diginsite.net"
+							},
+							{
+								"key": "broker-port",
+								"type": "text",
+								"value": "12589"
+							},
+							{
+								"key": "accountId",
+								"type": "text",
+								"value": "9999999",
+								"disabled": true
+							},
+							{
+								"key": "accountType",
+								"value": "0",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "hostIdentifier",
+								"value": "902",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "serviceType",
+								"value": "INTERNET_BANKING",
+								"type": "text"
+							},
+							{
+								"key": "institutionId",
+								"value": "1234",
+								"type": "text"
+							},
+							{
+								"key": "ancillaryKey",
+								"value": "041805987^1247437^1^D",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{url}}:{{port}}/niis/v1/transactions?customerId=041805987&accountId=1247437&accountType=1&startDate=20200101&endDate=20201001",
+							"protocol": "http",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"niis",
+								"v1",
+								"transactions"
+							],
+							"query": [
+								{
+									"key": "customerId",
+									"value": "041805987"
+								},
+								{
+									"key": "accountId",
+									"value": "1247437"
+								},
+								{
+									"key": "accountType",
+									"value": "1"
+								},
+								{
+									"key": "startDate",
+									"value": "20200101"
+								},
+								{
+									"key": "endDate",
+									"value": "20201001"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
